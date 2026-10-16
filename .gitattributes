@@ -1,0 +1,25 @@
+# ---- Chuan hoa dong ket ---------------------------------------------
+# Unity sinh file .meta cho moi asset. File .meta van la text nen chuan hoa
+# dong ket binh thuong, khong gan binary.
+*.cs            text eol=lf
+*.md            text eol=lf
+*.json          text eol=lf
+*.asmdef        text eol=lf
+*.asset         text eol=lf
+*.mat           text eol=lf
+*.meta          text eol=lf
+*.inputactions  text eol=lf
+*.unity         text eol=lf
+*.prefab        text eol=lf
+
+# ---- Asset nhan / nhung: luon luuoi binary ---------------------------
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.psd   binary
+*.tga   binary
+*.ogg   binary
+*.wav   binary
+*.mp3   binary
+*.fbx   binary
+*.mp4   binary

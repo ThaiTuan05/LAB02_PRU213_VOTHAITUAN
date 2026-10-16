@@ -1,0 +1,58 @@
+# ---- Unity: thu muc do Unity sinh ra, KHONG push --------------------
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# Asset meta / database cache
+[Ll]ibrary/Metadata/
+*.csproj
+*.unityproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+.vs/
+.idea/
+.vscode/
+*.code-workspace
+.vsconfig
+
+# Crash / recovery artifacts Unity tao khi bi crash
+[Rr]ecovery/
+sysinfo.txt
+crashlytics-build.properties
+[Tt]emp/__Backupscenes/
+[Tt]emp/__Backupscenes*/
+
+# Ban sao thu muc bien tap sao cho lan chay kiem tra
+.verification/
+SnowBoarder_Lab2.zip
+
+# Anh chup va ghi chu noi bo - khong push len GitHub
+/Documentation/
+
+# Build output
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+# OS / editor rac
+.DS_Store
+Thumbs.db
+*.swp
+*~
