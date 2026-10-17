@@ -23,8 +23,7 @@ git clone https://github.com/ThaiTuan05/LAB02_PRU213_VOTHAITUAN.git
 Mở `Assets/Scenes/SnowBoarder.unity`, bấm **Play**. Game tự tạo nhân vật, camera, UI và
 nhạc nền ngay khi vào scene — không cần kéo thả gì thêm.
 
-> Lần chạy đầu tiên Unity sẽ import package và build shader, mất vài phút. Bộ kiểm tra tự
-> động cần thêm thời gian nữa vì có chụp ảnh màn hình.
+> Lần chạy đầu tiên Unity sẽ import package và build shader, mất vài phút.
 
 ---
 
@@ -173,8 +172,6 @@ Assets/
 │   ├── SnowSynth.cs                ← bộ đồng bộ dùng chung (dao động, envelope, trễ, chuẩn hóa)
 │   ├── SnowMusic.cs                ← 3 chủ đề nhạc nền, mỗi núi một bài
 │   └── SnowSfx.cs                  ← tiếng bông tuyết, boost, shield, combo
-├── Editor/
-│   └── Lab2Validation.cs           ← 99 kiểm tra tự động (Editor-only)
 ├── Scenes/
 │   └── SnowBoarder.unity           ← scene chính
 └── Resources/SnowBoarder/          ← sprite, vật liệu, 2 file .ogg
@@ -190,43 +187,6 @@ Assets/
   vì một ảnh nền tĩnh.
 - **Sprite dùng URP 2D Sprite-Unlit** và `Full Rect` để không phụ thuộc ánh sáng scene.
 - Tài nguyên sinh ra (mesh, material, texture, camera) đều được giải phóng trong `OnDestroy`.
-
----
-
-## Kiểm thử tự động
-
-`Assets/Editor/Lab2Validation.cs` chứa **99 kiểm tra** chạy headless:
-
-```bash
-Unity.exe -batchmode -projectPath "<project>" \
-          -executeMethod Lab2Validation.Run -logFile Logs/Lab2.log
-```
-
-Kết quả lần chạy gần nhất: **99/99 PASS** trên Unity 6000.6.4f1.
-
-Bao gồm các nhóm kiểm tra:
-
-- Vật lý: tăng tốc từ đứng yên, tốc độ xoay và hãm xoay khi thả phím.
-- Va chạm đá: đỉnh an toàn, **đâm ngang từ trái luôn mất đúng một mạng**, lướt qua đỉnh không
-  bị phạt bad landing, góc bề mặt theo sườn núi.
-- Shield một lần và đặt nhân vật ra sau vật cản.
-- Combo tính ngay khi đủ vòng trên không, nhiều vòng cộng dồn.
-- Ba múi có đúng độ dài, phong cảnh và vật cản khác nhau.
-- Nhạc nền đủ chủ đề theo màn, tiếng pickup có ở mọi bậc combo, âm thanh kết thúc ở im lặng.
-- Nhiệm vụ, Time Attack, lưu điểm cao.
-
-> Các kiểm tra này dựng lại trạng thái có kiểm soát, **không thay thế việc chơi thử thực tế**.
-
----
-
-## Ghi chú
-
-- Điểm cao, âm lượng, trạng thái nhạc/tuyết và độ nhạy xoay lưu bằng `PlayerPrefs`.
-- Bộ kiểm tra chạy xong sẽ **ghi đè `PlayerPrefs` về giá trị cũ** để không làm hỏng điểm cao
-  của người chơi.
-- `Lab2Assets/` (bản sao asset gốc của đề bài) **không được commit** — Unity không import thư
-  mục nằm ngoài `Assets/`, và 14/19 file trong đó trùng GUID với bản đã nằm trong
-  `Assets/Resources/SnowBoarder/`.
 
 ---
 
